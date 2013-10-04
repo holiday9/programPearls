@@ -59,7 +59,7 @@ void print_str(char a[]) {
 int main() {
 	char x[] = {'a','b','c','1','3','5','7'};
 	print_str(x);
-	rotate_str(x, 7, 3);
+	rotate_str(x, 1, 7);
 	print_str(x);
 
 	return 0;
