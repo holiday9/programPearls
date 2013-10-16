@@ -65,7 +65,11 @@ void jump(char *a, int rotate_index, int n) {
 		while(j != l) {
 			if (l >= n) {
 				l -= n;
+			}
+			if (j == l) {
+				break;	
 			}		
+			printf("j = %d, l = %d\n", j,l);
 			a[k] = a[l];
 			k = l;
 			l += rotate_index;
