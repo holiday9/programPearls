@@ -48,19 +48,19 @@ void rotate_str(char * x, int rotdist, int n) {
 	}
 }
 
-void print_str(char a[]) {
+void print_str(char a[], int length) {
 	int i = 0;
-	printf("%d\n", sizeof(a));
-	for (i = 0;i < 7;i++) {
+	for (i = 0;i < length;i++) {
 		putchar(a[i]);
 	}
 	putchar('\n');
 }
 int main() {
 	char x[] = {'a','b','c','1','3','5','7'};
-	print_str(x);
-	rotate_str(x, 1, 7);
-	print_str(x);
-
+	
+	print_str(x, sizeof(x));
+	rotate_str(x, 1, sizeof(x));
+	print_str(x, sizeof(x));
+	
 	return 0;
 }
