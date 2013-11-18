@@ -19,6 +19,7 @@
 
 float get_tax(float income);
 
+
 int main() {
 	float income = 3000;
 	float tax;
