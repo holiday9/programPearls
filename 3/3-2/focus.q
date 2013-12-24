@@ -20,3 +20,4 @@ output: m1,...m15
 compare 
 A15 = c1A14 + c2A13 + c3A12 + c4A11 + c5A10 + c6 
 
+
