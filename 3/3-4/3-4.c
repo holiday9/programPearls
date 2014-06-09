@@ -16,6 +16,9 @@
  * =====================================================================================
  */
 
+#include<stdio.h>
+#include<stdlib.h>
+
 int is_leap(int year) {
 	if (year / 400 == 0) {
 		return 1;	
@@ -57,5 +60,35 @@ long get_diff_date1_and_date2(int y1,int m1, int d1, int y2,int m2,int d2) {
 
 	return count1 - count2;
 }
+
+int getDayOfWeek(int y, int m, int d) {
+	// 2014,6,8 is the first day is sunday.
+	
+	int dayofweek[7] = {0,1,2,3,4,5,6};
+	long offset_days = get_diff_date1_and_date2(y,m,d,2014,6,8);
+	int remainder = (int)(offset_days % 7);
+	if (remainder < 0) 
+		remainder += 7;
+	return dayofweek[remainder];
+}
+
+void getCalenday(int y, int m, int calenday[][5]) {
+	int day;
+	int days = days_of_month(m,y);
+	for (day = 1;day <= days;day++) {
+		int i = getDayOfWeek(y,m,day);
+		int j = day / 7;
+		printf("i = %d,j = %d, day = %d\n", i,j,day);
+		calenday[i][j] = day;
+	}
+}
+
+
+
+
+
+
+
+
 
 
