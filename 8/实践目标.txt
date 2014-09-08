@@ -1,0 +1,7 @@
+#input : a vector x of n floating-point numbers.
+#output : maximum sum
+#constraint : contiguous subvector of input
+
+实现复杂度为 ｍ³　m²　nlogn n的算
+法．
+
