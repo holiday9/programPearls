@@ -21,6 +21,13 @@
 #include"o3.h"
 
 int main(int argc, char * argv[]) {
-	getMaxValueOfVector(0, 0);
+	int result;
+	int vector[10] = {1,-2,2,2,2,4,-5,6,1,9};
+	int vector2[10] = {1,-2,2,2,2,4,-5,6,1,-9};
+
+	result = getMaxValueOfVector(vector, 10);
+	assertEqual(21, result);
+	result = getMaxValueOfVector(vector2, 10);
+	assertEqual(12, result);
 
 }
