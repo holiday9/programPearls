@@ -19,15 +19,20 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include"o3.h"
+#include"o2.h"
 
 int main(int argc, char * argv[]) {
 	int result;
 	int vector[10] = {1,-2,2,2,2,4,-5,6,1,9};
 	int vector2[10] = {1,-2,2,2,2,4,-5,6,1,-9};
 
-	result = getMaxValueOfVector(vector, 10);
+	result = getMaxValueOfVectorO3(vector, 10);
 	assertEqual(21, result);
-	result = getMaxValueOfVector(vector2, 10);
+	result = getMaxValueOfVectorO3(vector2, 10);
 	assertEqual(12, result);
 
+	result = getMaxValueOfVectorO2(vector, 10);
+	assertEqual(21, result);
+	result = getMaxValueOfVectorO2(vector2, 10);
+	assertEqual(12, result);
 }

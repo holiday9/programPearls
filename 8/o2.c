@@ -1,9 +1,9 @@
 /*
  * =====================================================================================
  *
- *       Filename:  n3.c
+ *       Filename:  o2.c
  *
- *    Description:  获取最大子向量最直接的想法．
+ *    Description:  获取最大子向量的平方级量级的方法．
  *
  *        Version:  1.0
  *        Created:  2014年09月16日 19时46分04秒
@@ -20,27 +20,27 @@
 #include<stdlib.h>
 #include"mymath.h"
 
-int getMaxValueOfVectorO3(int vector[], int size) {
-	//?我觉得是遍历２次，为什么书上说３次循环．
-	printf("getMaxValueOfVector.o3\n");
-	// transfer orderly, from head to tail. [0, n -1]
-	// compute sum from i to j. j belong to [i + 1, n - 1]
-	//     compute sum, and compare sum to maxsum
-	//     maxsum = max(sum, maxsum)
+int getMaxValueOfVectorO2(int vector[], int size) {
+	printf("getMaxValueOfVector.o2\n");
 	
 	int i;
 	int j;
 	int k;
 	int maxsum = 0;
 	int sum = 0;
+	int last_sum; // sum[i,k]
 
 	for (i = 0; i<size; i++) {
+		last_sum = 0;
 		for( j = i+1; j < size; j++) {
-			sum = 0;
-			for (k = i; k<=j; k++) {
-				sum += vector[k];
-			}
+			/*
+ 			 * 改造这里,保存上一次的sum[i,j-1]
+			 * sum[i,j] = sum[i,j-1] + vector[j]
+ 			 */
+			sum = last_sum + vector[j];
 			maxsum = max(sum, maxsum);
+			
+			last_sum = sum;
 		}	
 	}
 	

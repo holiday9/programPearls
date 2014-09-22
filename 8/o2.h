@@ -1,12 +1,13 @@
 /*
  * =====================================================================================
  *
- *       Filename:  o3.h
+ *       Filename:  o2.h
  *
- *    Description:  header file of o3.c
+ *    Description:  define interface whose complexity is o2
+ *    				to compute max value
  *
  *        Version:  1.0
- *        Created:  2014年09月16日 19时55分17秒
+ *        Created:  2014年09月22日 22时41分00秒
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -16,4 +17,4 @@
  * =====================================================================================
  */
 
-int getMaxValueOfVectorO3(int vector[], int size);
+int getMaxValueOfVectorO2(int vector[], int size);
